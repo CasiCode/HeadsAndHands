@@ -12,8 +12,6 @@ import java.util.TreeSet
 
 
 class MainActivity : AppCompatActivity() {
-    private var students: TreeSet<String> = TreeSet<String>()
-
     @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
