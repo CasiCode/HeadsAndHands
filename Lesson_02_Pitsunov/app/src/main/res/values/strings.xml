@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">Lesson_02_Pitsunov</string>
+    <string name="lokaleButtonText" translatable="false">Lokale</string>
+    <string name="layerListButtonText" translatable="false">Layer List</string>
+    <string name="localeActivityTextViewText">Sorry, there is nothing</string>
+    <string name="localeActivityButtonText" translatable="false">Боль и страдание</string>
+    <string name="state_list_button_text">Кнопка 1</string>
+</resources>

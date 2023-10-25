@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lesson_02_Pitsunov" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Lesson_02_Pitsunov" parent="Base.Theme.Lesson_02_Pitsunov" />
+
+    <style name="Theme.ButtonOrange" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorPrimary">@color/state_list_button_color</item>
+    </style>
+</resources>

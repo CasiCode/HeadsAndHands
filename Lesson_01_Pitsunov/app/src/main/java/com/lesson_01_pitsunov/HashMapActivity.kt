@@ -7,6 +7,7 @@ import android.view.KeyEvent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class HashMapActivity : AppCompatActivity() {
@@ -21,13 +22,21 @@ class HashMapActivity : AppCompatActivity() {
             if (keyEvent.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 val str: String = findViewById<EditText>(R.id.editText).text.toString()
                 val strInParts = str.split(" ")
-                val student: Student = Student(
-                    strInParts[0],
-                    strInParts[1],
-                    strInParts[2],
-                    strInParts[3]
-                )
-                students.put(student.id, student)
+
+                try {
+                    val student: Student = Student(
+                        strInParts[0],
+                        strInParts[1],
+                        strInParts[2],
+                        strInParts[3]
+                    )
+
+                    students.put(student.id, student)
+                }
+                catch (e: IndexOutOfBoundsException) {
+                    Toast.makeText(this, "input is not correct", Toast.LENGTH_SHORT).show()
+                }
+
                 findViewById<EditText>(R.id.editText).text.clear()
                 return@setOnKeyListener true
             }
@@ -35,9 +44,10 @@ class HashMapActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.printButton).setOnClickListener {
-            var output: String = ""
-            for (student in students) {
-                output += student.key.toString() + " " + student.value.fieldsToString() + "\n"
+            val output = buildString {
+                students.forEach {
+                    append("${it.key.toString()} ${it.value.fieldsToString()}\n")
+                }
             }
             findViewById<TextView>(R.id.textView).text = output
         }
