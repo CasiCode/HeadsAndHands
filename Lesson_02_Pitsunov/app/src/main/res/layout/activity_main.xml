@@ -17,13 +17,13 @@
             android:id="@+id/localeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lokaleButtonText"/>
+            android:text="@string/lokale_button_text"/>
 
         <Button
             android:id="@+id/layerListButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/layerListButtonText"/>
+            android:text="@string/layerlist_button_text"/>
 
     </LinearLayout>
 

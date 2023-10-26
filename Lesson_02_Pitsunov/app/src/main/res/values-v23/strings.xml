@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="localeActivityButtonText" translatable="false">Радость и счастье</string>
+    <string name="locale_activity_button_text" translatable="false">Радость и счастье</string>
 </resources>

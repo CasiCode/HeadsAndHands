@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">Lesson_02_Pitsunov</string>
-    <string name="lokaleButtonText" translatable="false">Lokale</string>
-    <string name="layerListButtonText" translatable="false">Layer List</string>
-    <string name="localeActivityTextViewText">Sorry, there is nothing</string>
-    <string name="localeActivityButtonText" translatable="false">Боль и страдание</string>
-    <string name="state_list_button_text">Кнопка 1</string>
+    <string name="lokale_button_text" translatable="false">Lokale</string>
+    <string name="layerlist_button_text" translatable="false">Layer List</string>
+    <string name="locale_activity_textview_text">Sorry, there is nothing</string>
+    <string name="locale_activity_button_text" translatable="false">Боль и страдание</string>
+    <string name="state_list_button_text" translatable="false">Кнопка 1</string>
 </resources>

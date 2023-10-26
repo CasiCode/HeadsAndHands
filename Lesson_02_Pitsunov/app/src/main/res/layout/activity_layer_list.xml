@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/layer_list"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/stateListButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:theme="@style/Theme.ButtonOrange"
+            app:backgroundTint="@color/state_list_button_color"
             android:background="@drawable/button_state_list"
             android:text="@string/state_list_button_text"/>
 
