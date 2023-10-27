@@ -11,7 +11,7 @@ import java.util.TreeSet
 
 
 class TreeSetActivity : AppCompatActivity() {
-    private var students: TreeSet<String> = TreeSet<String>()
+    private val students: TreeSet<String> = TreeSet<String>()
 
     @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +25,10 @@ class TreeSetActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.printButton).setOnClickListener {
-            var output: String = ""
-            for (student in students) {
-                output += student.toString() + "\n"
+            val output = buildString {
+                students.forEach {
+                    append("$it\n")
+                }
             }
             findViewById<TextView>(R.id.textView).text = output
         }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="locale_activity_textview_text">
+        О слава тщетная!
+        \nо тленья грозный вид —
+        \nХ*й твердый Пушкина
+        \nздесь в первый раз лежит.
+    </string>
+</resources>

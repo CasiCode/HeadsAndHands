@@ -6,11 +6,7 @@ class Student(
     private val grade: String,
     private val birthYear: String // Could be Int
 ) {
-    var id: Long? = null
-
-    init {
-        id = System.currentTimeMillis()
-    }
+    var id: Long = System.currentTimeMillis()
 
     fun fieldsToString(): String {
         return "$name $surname $grade $birthYear"
