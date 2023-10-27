@@ -17,7 +17,7 @@
             android:id="@+id/localeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lokale_button_text"/>
+            android:text="@string/loсale_button_text"/>
 
         <Button
             android:id="@+id/layerListButton"
