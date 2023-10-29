@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lesson_03_Pitsunov</string>
+    <string name="app_title">Личный профиль</string>
+    <string name="private_data">Личные данные</string>
+    <string name="logout_button_text">Выйти из аккаунта</string>
+    <string name="menu_button_title">PencilButton</string>
+    <string name="no_constraints_activity_button_text">No constraints</string>
+    <string name="constraints_activity_button_text">Constraints</string>
+</resources>
