@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange_primary</item>
+        <item name="colorSecondaryVariant">@color/orange_secondary</item>
+
+        <item name="textColorPrimary">@color/grey_primary</item>
+        <item name="textColorSecondary">@color/grey_secondary</item>
+        <item name="iconTintColor">@color/grey_primary</item>
+
+        <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
+    </style>
+
+    <style name="Theme.Lesson_03_Pitsunov" parent="Base.Theme.Lesson_03_Pitsunov" />
+</resources>
