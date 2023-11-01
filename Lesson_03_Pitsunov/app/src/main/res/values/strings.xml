@@ -6,4 +6,13 @@
     <string name="menu_button_title">PencilButton</string>
     <string name="no_constraints_activity_button_text">No constraints</string>
     <string name="constraints_activity_button_text">Constraints</string>
+    <string name="card_number_title">Карта №</string>
+    <string name="name_title">Имя</string>
+    <string name="surname_title">Фамилия</string>
+    <string name="email_title">E-mail</string>
+    <string name="login_title">Логин</string>
+    <string name="region_title">Ваш регион</string>
+    <string name="saratov_toast_text">Нельзя сбежать из Саратова!</string>
+    <string name="dont_leave_toast_text">НЕ УХАДИ!</string>
+    <string name="pencil_button_toast_text">Карандашик</string>
 </resources>
