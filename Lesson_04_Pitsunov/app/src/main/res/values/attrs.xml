@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="customColorPrimary" format="reference" />
+    <attr name="customColorSecondary" format="reference" />
+
+    <attr name="customTextColorWarning" format="reference" />
+    <attr name="customTextColorPrimary" format="reference" />
+    <attr name="customTextColorSecondary" format="reference" />
+</resources>
