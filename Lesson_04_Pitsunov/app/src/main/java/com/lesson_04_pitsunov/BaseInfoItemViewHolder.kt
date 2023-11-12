@@ -15,7 +15,7 @@ class BaseInfoItemViewHolder(
 ) {
     private val binding by viewBinding(ItemBaseInfoBinding::bind)
 
-    fun bind(item: BaseInfoItem) = with(binding) {
+    fun bind(item: ListItem) = with(binding) {
         root.setOnClickListener { view ->
             Snackbar.make(view, item.title, Snackbar.LENGTH_LONG).show()
         }
@@ -25,6 +25,7 @@ class BaseInfoItemViewHolder(
         if (item.info == null) {
             itemDetailedInfoTextView.visibility = View.GONE
         } else {
+            itemDetailedInfoTextView.visibility = View.VISIBLE
             itemDetailedInfoTextView.text = item.info
         }
     }

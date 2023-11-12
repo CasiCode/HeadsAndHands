@@ -16,11 +16,6 @@ class MainActivity : AppCompatActivity() {
     private val itemsAdapter = ItemsAdapter()
     private lateinit var layoutManager: GridLayoutManager
 
-    private val onNeutralButtonClick = { dialog: DialogInterface, which: Int ->
-        Toast.makeText(applicationContext,
-            "Извиняем", Toast.LENGTH_SHORT).show()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -36,7 +31,10 @@ class MainActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(this).apply {
                 setTitle("ЗАЧЕМ")
                 setMessage("Ты сюда тыкнул?")
-                setNeutralButton("Извините", onNeutralButtonClick)
+                setNeutralButton("Извините") { dialog, which ->
+                    Toast.makeText(applicationContext,
+                        "Извиняем", Toast.LENGTH_SHORT).show()
+                }
                 show()
             }
 
@@ -46,11 +44,10 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = itemsAdapter
         itemsAdapter.setList(ItemsList.items)
 
-        layoutManager = GridLayoutManager(this@MainActivity, 2)
+        layoutManager = GridLayoutManager(this@MainActivity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 return when (itemsAdapter.getItemViewType(position)) {
-                    // Надо понять, почему столбики наоборот
                     TYPE_DETAILED_INFO_ITEM -> 1
                     TYPE_BASE_INFO_ITEM -> 2
                     else -> -1
@@ -77,5 +74,9 @@ class MainActivity : AppCompatActivity() {
                 )
             }
         )
+    }
+
+    companion object {
+        private const val SPAN_COUNT = 2
     }
 }

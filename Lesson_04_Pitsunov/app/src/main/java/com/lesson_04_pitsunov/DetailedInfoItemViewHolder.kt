@@ -16,18 +16,21 @@ class DetailedInfoItemViewHolder(
 ) {
     private val binding by viewBinding(ItemDetailedInfoBinding::bind)
     @SuppressLint("ResourceAsColor")
-    fun bind(item: DetailedInfoItem) = with(binding) {
+    fun bind(item: ListItem) = with(binding) {
         root.setOnClickListener {view ->
             Snackbar.make(view, item.title, Snackbar.LENGTH_LONG).show()
         }
         itemImageView.setImageResource(item.image)
         itemTitleTextView.text = item.title
-        if (item.info.isEmpty()) {
+        if (item.info?.isEmpty() == true) {
             itemDetailedInfoTextView.visibility = GONE
         } else {
             itemDetailedInfoTextView.text = item.info
             if (item.isWarning) {
                 itemDetailedInfoTextView.setTextColor(R.attr.customTextColorWarning)
+            }
+            else {
+                itemDetailedInfoTextView.setTextColor(R.attr.customTextColorSecondary)
             }
         }
     }

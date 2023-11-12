@@ -3,10 +3,9 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     app:cardCornerRadius="2dp"
     app:cardElevation="0dp"
-    app:cardBackgroundColor="@color/white">
+    app:cardBackgroundColor="?attr/customColorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:textColor="@color/grey42"
+                android:textColor="?attr/customTextColorPrimary"
                 android:textSize="16sp"/>
 
             <TextView
@@ -38,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:textColor="@color/grey88"
+                android:textColor="?attr/customTextColorSecondary"
                 android:textSize="12sp"/>
         </LinearLayout>
     </LinearLayout>
