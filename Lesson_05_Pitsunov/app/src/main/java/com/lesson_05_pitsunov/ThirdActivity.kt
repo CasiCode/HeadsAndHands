@@ -19,7 +19,7 @@ class ThirdActivity : AppCompatActivity() {
             val data = result.data
             Snackbar.make(
                 binding.root,
-                data!!.getStringExtra(KEY_QUERY).toString(),
+                data?.getStringExtra(KEY_QUERY).toString(),
                 Snackbar.LENGTH_LONG
             ).show()
         }

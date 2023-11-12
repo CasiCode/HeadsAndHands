@@ -31,9 +31,9 @@ class FourthActivity : AppCompatActivity() {
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
 
-        val time: Long = intent!!.getLongExtra(KEY_TIME, 0)
+        val time: Long? = intent?.getLongExtra(KEY_TIME, 0)
         val format = SimpleDateFormat.getDateTimeInstance()
-        binding.textView.text = format.format(Date(time))
+        binding.textView.text = format.format(time?.let { Date(time) } ?: Date())
     }
 
     companion object {
