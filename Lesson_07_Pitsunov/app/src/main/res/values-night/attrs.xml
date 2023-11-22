@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="custom_status_bar_color" type="color" />
+    <item name="custom_toolbar_color" type="color" />
+    <item name="custom_background_color" type="color" />
+</resources>

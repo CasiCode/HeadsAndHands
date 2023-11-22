@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/searchMenuItem"
+        android:icon="@drawable/baseline_search_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/search_menu_item_title_text" />
+
+    <item
+        android:id="@+id/dropdownMenuFirstItem"
+        app:showAsAction="never"
+        android:title="@string/dropdown_menu_first_item_title_text"/>
+
+    <item
+        android:id="@+id/dropdownMenuSecondItem"
+        app:showAsAction="never"
+        android:title="@string/dropdown_menu_second_item_title_text"/>
+
+    <item
+        android:id="@+id/dropdownMenuThirdItem"
+        app:showAsAction="never"
+        android:title="@string/dropdown_menu_third_item_title_text"/>
+</menu>
