@@ -26,13 +26,22 @@ class ItemsAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
+<<<<<<< HEAD
             is DetailedInfoItemViewHolder -> holder.bind(items[position])
             is BaseInfoItemViewHolder -> holder.bind(items[position])
+=======
+            is DetailedInfoItemViewHolder -> holder.bind((items[position] as ListItem.DetailedInfoListItem).item)
+            is BaseInfoItemViewHolder -> holder.bind((items[position] as ListItem.BaseInfoListItem).item)
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
         }
     }
 
     override fun getItemViewType(position: Int): Int {
+<<<<<<< HEAD
         return if (items[position].isDetailed) {
+=======
+        return if (items[position] is ListItem.DetailedInfoListItem) {
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
             TYPE_DETAILED_INFO_ITEM
         } else {
             TYPE_BASE_INFO_ITEM

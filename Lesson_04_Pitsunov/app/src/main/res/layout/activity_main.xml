@@ -27,6 +27,9 @@
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+<<<<<<< HEAD
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+=======
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
         app:spanCount="2" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

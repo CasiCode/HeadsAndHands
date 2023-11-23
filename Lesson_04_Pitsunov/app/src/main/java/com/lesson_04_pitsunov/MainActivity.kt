@@ -16,6 +16,14 @@ class MainActivity : AppCompatActivity() {
     private val itemsAdapter = ItemsAdapter()
     private lateinit var layoutManager: GridLayoutManager
 
+<<<<<<< HEAD
+=======
+    private val onNeutralButtonClick = { dialog: DialogInterface, which: Int ->
+        Toast.makeText(applicationContext,
+            "Извиняем", Toast.LENGTH_SHORT).show()
+    }
+
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -31,10 +39,14 @@ class MainActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(this).apply {
                 setTitle("ЗАЧЕМ")
                 setMessage("Ты сюда тыкнул?")
+<<<<<<< HEAD
                 setNeutralButton("Извините") { dialog, which ->
                     Toast.makeText(applicationContext,
                         "Извиняем", Toast.LENGTH_SHORT).show()
                 }
+=======
+                setNeutralButton("Извините", onNeutralButtonClick)
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
                 show()
             }
 
@@ -44,10 +56,18 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = itemsAdapter
         itemsAdapter.setList(ItemsList.items)
 
+<<<<<<< HEAD
         layoutManager = GridLayoutManager(this@MainActivity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 return when (itemsAdapter.getItemViewType(position)) {
+=======
+        layoutManager = GridLayoutManager(this@MainActivity, 2)
+        layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return when (itemsAdapter.getItemViewType(position)) {
+                    // Надо понять, почему столбики наоборот
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
                     TYPE_DETAILED_INFO_ITEM -> 1
                     TYPE_BASE_INFO_ITEM -> 2
                     else -> -1
@@ -75,8 +95,11 @@ class MainActivity : AppCompatActivity() {
             }
         )
     }
+<<<<<<< HEAD
 
     companion object {
         private const val SPAN_COUNT = 2
     }
+=======
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
 }
