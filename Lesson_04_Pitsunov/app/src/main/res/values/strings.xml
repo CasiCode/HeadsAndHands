@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lesson_04_Pitsunov</string>
+    <string name="app_title">Моя квартира</string>
+    <string name="info_menu_item_title">Информация</string>
+    <string name="home_menu_item_title">Ваш Дом</string>
+    <string name="home_menu_item_toast_text">Домик</string>
+</resources>

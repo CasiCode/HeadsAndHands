@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lesson_06_Pitsunov</string>
+    <string name="search_menu_item_title_text">Search</string>
+    <string name="dropdown_menu_first_item_title_text">Menu item one</string>
+    <string name="dropdown_menu_second_item_title_text">Menu item two</string>
+    <string name="dropdown_menu_third_item_title_text">Menu item three</string>
+    <string name="item_one_toolbar_title_text">Item one</string>
+    <string name="item_two_toolbar_title_text">Item two</string>
+    <string name="lamp_menu_item_title_text">Lamp</string>
+    <string name="item_three_toolbar_title_text">Item three</string>
+</resources>

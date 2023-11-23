@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lesson_04_Pitsunov" parent="Theme.Material3.Light.NoActionBar">
+        <item name="customColorPrimary">@color/white</item>
+        <item name="customColorSecondary">@color/greyF6</item>
+
+        <item name="customTextColorPrimary">@color/grey42</item>
+        <item name="customTextColorSecondary">@color/grey88</item>
+        <item name="customTextColorWarning">@color/red42</item>
+
+        <item name="android:statusBarColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="Theme.Lesson_04_Pitsunov" parent="Base.Theme.Lesson_04_Pitsunov" />
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemOneMenuItem"
+        android:title="@string/item_one_toolbar_title_text"
+        android:icon="@drawable/fill_7"/>
+    <item
+        android:id="@+id/itemTwoMenuItem"
+        android:title="@string/item_two_toolbar_title_text"
+        android:icon="@drawable/fill_7"/>
+    <item
+        android:id="@+id/itemTreeMenuItem"
+        android:title="@string/item_three_toolbar_title_text"
+        android:icon="@drawable/fill_7"/>
+</menu>
