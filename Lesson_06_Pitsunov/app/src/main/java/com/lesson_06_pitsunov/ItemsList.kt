@@ -9,7 +9,7 @@ object ItemsList {
             previousValueDay = 35,
             isPrecise = false,
             isWarning = true,
-            info = "Необходимо подать показания до 25.03.18"
+            info = "Необходимо подать показания до 25.11.23"
         ),
         ListItem(
             image = R.drawable.ic_water_hot,
@@ -18,7 +18,7 @@ object ItemsList {
             previousValueDay = 35,
             isPrecise = false,
             isWarning = true,
-            info = "Необходимо подать показания до 25.03.18"
+            info = "Необходимо подать показания до 25.11.23"
         ),
         ListItem(
             image = R.drawable.ic_electro,
@@ -29,7 +29,7 @@ object ItemsList {
             previousValueNight = 35,
             isPrecise = true,
             isWarning = false,
-            info = "Показания сданы 16.02.18 и будут учтены при следующем расчете 25.02.18"
+            info = "Показания сданы 16.10.23 и будут учтены при следующем расчете 25.11.23"
         ),
     )
 }

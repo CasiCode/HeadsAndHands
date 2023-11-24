@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.marginStart
@@ -19,7 +20,7 @@ class ItemViewHolder(
         .from(parent.context)
         .inflate(
             R.layout.item_payment,
-            null,
+            parent,
             false
         )
 ) {
@@ -29,14 +30,39 @@ class ItemViewHolder(
         itemView.findViewById<TextView>(R.id.titleTextView).text = item.title
         itemView.findViewById<TextView>(R.id.barcodeTextView).text = item.barcode.toString()
 
+        val infoImageClickableView: ImageView = itemView.findViewById(R.id.infoImageClickableView)
+        val moreImageClickableView: ImageView = itemView.findViewById(R.id.moreImageClickableView)
+        val sendImageClickableView: ImageView = itemView.findViewById(R.id.sendImageClickableView)
+        infoImageClickableView.setOnClickListener {
+            Toast.makeText(
+                itemView.context,
+                infoImageClickableView.contentDescription.toString(),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        moreImageClickableView.setOnClickListener {
+            Toast.makeText(
+                itemView.context,
+                moreImageClickableView.contentDescription.toString(),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        sendImageClickableView.setOnClickListener {
+            Toast.makeText(
+                itemView.context,
+                sendImageClickableView.contentDescription.toString(),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
         val infoTextView: TextView = itemView.findViewById(R.id.infoTextView)
         infoTextView.text = item.info
         if (item.isWarning) {
             infoTextView.setTextColor(
                 ContextCompat.getColor(itemView.context, R.color.warning)
             )
-        }
-        else {
+            itemView.findViewById<ImageView>(R.id.warningImageView).visibility = VISIBLE
+        } else {
             infoTextView.setTextColor(
                 ContextCompat.getColor(itemView.context, R.color.black)
             )
@@ -55,18 +81,17 @@ class ItemViewHolder(
             nightValueEditView.visibility = VISIBLE
             nightValueTextView.visibility = VISIBLE
 
-            dayValueTextView.text = "День"
+            dayValueTextView.text = itemView.context.getString(R.string.day_value_textview_text)
 
             peakValueEditView.hint = item.previousValuePeak.toString()
             nightValueEditView.hint = item.previousValueNight.toString()
-        }
-        else {
+        } else {
             peakValueEditView.visibility = GONE
             peakValueTextView.visibility = GONE
             nightValueEditView.visibility = GONE
             nightValueTextView.visibility = GONE
 
-            dayValueTextView.text = "Новые показания"
+            dayValueTextView.text = itemView.context.getString(R.string.new_value_textview_text)
         }
         dayValueEditView.hint = item.previousValueDay.toString()
     }
