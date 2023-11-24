@@ -11,6 +11,7 @@ import com.lesson_07_pitsunov.data.model.Bridge
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 const val SECONDS_IN_HOUR: Long = 60 * 60
 
@@ -23,6 +24,8 @@ class BridgeViewHolder(
 ) {
     fun bind(item: Bridge) {
         val format = SimpleDateFormat("HH:mm")
+        // Запрашиваю текущее время по Питеру
+        format.timeZone = TimeZone.getTimeZone("Europe/Saint-Petersburg")
         val currentTime = format.parse(
             format.format( Date() )
         )
@@ -44,6 +47,7 @@ class BridgeViewHolder(
                             itemView.context, R.drawable.ic_brige_late
                         )
                     )
+                item.isClosed = true
                 break
             } else if (currentTime.after(warnTime) && currentTime.before(startTime)) {
                 statusImageView.setImageDrawable(
@@ -51,6 +55,8 @@ class BridgeViewHolder(
                             itemView.context, R.drawable.ic_brige_soon
                         )
                     )
+                item.isSoonClosed = true
+                break
             } else {
                 statusImageView.setImageDrawable(
                         ContextCompat.getDrawable(

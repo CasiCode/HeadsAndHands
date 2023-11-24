@@ -1,5 +1,6 @@
 package com.lesson_07_pitsunov.presentation
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,6 +22,8 @@ import java.util.Date
 import java.util.Locale
 
 class BridgeDescriptionFragment : Fragment() {
+    private var navigationController: NavigationController? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,9 +32,13 @@ class BridgeDescriptionFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_bridge_description, container, false)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        navigationController = (parentFragment as? NavigationController) ?: (activity as? NavigationController)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val _bridge: Bridge?
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             @Suppress("DEPRECATION")
@@ -57,46 +64,25 @@ class BridgeDescriptionFragment : Fragment() {
             photoCloseURL = ERROR_IMAGE_URL
         )
 
-        var isOpen: Boolean = false
-        val format = SimpleDateFormat("HH:mm")
-        val currentTime = format.parse(
-            format.format( Date() )
-        )
-        for (divorce in bridge.divorces) { // Использую break, так что forEach не подойдет
-            val startTime: Date? = format.parse(divorce.start)
-            val warnTime: Date? = format.parse(
-                format.format(
-                    Date.from(
-                        startTime?.toInstant()?.minusSeconds(SECONDS_IN_HOUR)
-                    )
+        val statusImageView: ImageView = view.findViewById(R.id.statusImageView)
+        if (bridge.isClosed) {
+            statusImageView.setImageDrawable(
+                ContextCompat.getDrawable(
+                    view.context, R.drawable.ic_brige_late
                 )
             )
-            val endTime: Date? = format.parse(divorce.end)
-
-            val statusImageView: ImageView = view.findViewById(R.id.statusImageView)
-            if (currentTime.after(startTime) && currentTime.before(endTime)) {
-                statusImageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        view.context, R.drawable.ic_brige_late
-                    )
+        } else if (bridge.isSoonClosed) {
+            statusImageView.setImageDrawable(
+                ContextCompat.getDrawable(
+                    view.context, R.drawable.ic_brige_soon
                 )
-                isOpen = false
-                break
-            } else if (currentTime.after(warnTime) && currentTime.before(startTime)) {
-                statusImageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        view.context, R.drawable.ic_brige_soon
-                    )
+            )
+        } else {
+            statusImageView.setImageDrawable(
+                ContextCompat.getDrawable(
+                    view.context, R.drawable.ic_brige_normal
                 )
-                isOpen = true
-            } else {
-                statusImageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        view.context, R.drawable.ic_brige_normal
-                    )
-                )
-                isOpen = true
-            }
+            )
         }
 
         val nameTextView: TextView = view.findViewById(R.id.nameTextView)
@@ -123,7 +109,7 @@ class BridgeDescriptionFragment : Fragment() {
         }
 
         val toolbarImageView: ImageView = view.findViewById(R.id.toolbarImageView)
-        if (isOpen) {
+        if (!bridge.isClosed) {
             Glide.with(view.context)
                 .load(bridge.photoOpenURL)
                 .into(toolbarImageView)
@@ -135,11 +121,7 @@ class BridgeDescriptionFragment : Fragment() {
 
         view.findViewById<MaterialToolbar>(R.id.bridgeDescriptionToolbar)
             .setNavigationOnClickListener {
-                parentFragmentManager.commit {
-                    setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                    hide(this@BridgeDescriptionFragment)
-                    remove(this@BridgeDescriptionFragment)
-                }
+                navigationController?.back()
             }
     }
 

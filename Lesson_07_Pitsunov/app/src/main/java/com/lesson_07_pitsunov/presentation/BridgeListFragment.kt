@@ -1,5 +1,6 @@
 package com.lesson_07_pitsunov.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ import kotlinx.coroutines.launch
 
 class BridgeListFragment : Fragment() {
     private val adapter = BridgesAdapter()
+    private var navigationController: NavigationController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,18 +30,17 @@ class BridgeListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_bridge_list, container, false)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        navigationController = (parentFragment as? NavigationController) ?: (activity as? NavigationController)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<ProgressBar>(R.id.progressBar).isVisible = false
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter.apply {
             itemListener = ItemListener { item ->
-                parentFragmentManager.commit {
-                    setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                    add(
-                        R.id.mainFrameLayout,
-                        BridgeDescriptionFragment.newInstance(item)
-                    )
-                }
+                navigationController?.navigate(BridgeDescriptionFragment.newInstance(item))
             }
         }
         loadBridges()

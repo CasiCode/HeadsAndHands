@@ -12,7 +12,9 @@ class Bridge (
     val descriptionEng: String,
     val divorces: List<BridgeDivorce>,
     val photoCloseURL: String,
-    val photoOpenURL: String
+    val photoOpenURL: String,
+    var isClosed: Boolean = false,
+    var isSoonClosed: Boolean = false,
 ) : Parcelable {
     constructor(bridgeApi: BridgeApi) : this(
         name = bridgeApi.name?: NULL_STRING,
