@@ -11,7 +11,9 @@ class MainActivity : AppCompatActivity(), NavigationController {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        navigate(BridgeListFragment.newInstance())
+        supportFragmentManager.commit {
+            add(R.id.mainFrameLayout, BridgeListFragment.newInstance())
+        }
     }
 
     override fun navigate(fragment: Fragment) {
