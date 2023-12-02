@@ -3,4 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="warning">#FF4242</color>
+    <color name="color_dots">#808080</color>
+    <color name="color_dots_selected">#373737</color>
+    <color name="color_text_titles">#363742</color>
+    <color name="color_barcode_textview">#3F3F3F</color>
+    <color name="color_value_textview_text">#888888</color>
+    <color name="color_value_edittext_backgroundtint">#C2C1C7</color>
 </resources>

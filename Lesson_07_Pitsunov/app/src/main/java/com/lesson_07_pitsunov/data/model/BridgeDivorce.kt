@@ -5,7 +5,7 @@ import com.lesson_07_pitsunov.values.StringConstants.NULL_STRING
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class BridgeDivorce(
+data class BridgeDivorce(
     val start: String,
     val end: String
 ) : Parcelable {

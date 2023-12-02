@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class ItemsAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ItemsAdapter: RecyclerView.Adapter<ItemViewHolder>() {
     private val items = mutableListOf<ListItem>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(parent)
     }
 
@@ -14,10 +14,8 @@ class ItemsAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (holder) {
-            is ItemViewHolder -> holder.bind(items[position])
-        }
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.bind(items[position])
     }
 
     fun setList(items: List<ListItem>) {

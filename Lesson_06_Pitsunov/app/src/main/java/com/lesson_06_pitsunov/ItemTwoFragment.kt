@@ -20,7 +20,7 @@ class ItemTwoFragment : Fragment(R.layout.fragment_item_two) {
                 R.id.lampMenuItem -> {
                     Toast.makeText(
                         this@ItemTwoFragment.requireActivity(),
-                        "Фонарик",
+                        getString(R.string.torch_menu_item_toast),
                         Toast.LENGTH_SHORT
                     ).show()
                     true

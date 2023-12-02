@@ -1,4 +1,4 @@
-package com.lesson_06_pitsunov.com.lesson_06_pitsunov
+package com.lesson_06_pitsunov
 
 import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment

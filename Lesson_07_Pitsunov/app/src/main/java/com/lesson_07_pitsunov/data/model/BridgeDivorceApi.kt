@@ -2,7 +2,7 @@ package com.lesson_07_pitsunov.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class BridgeDivorceApi(
+class BridgeDivorceApi(
     @SerializedName("start") val start: String?,
     @SerializedName("end") val end: String?
 ) {

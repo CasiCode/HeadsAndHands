@@ -16,4 +16,11 @@
     <string name="send_button_content_description">send button</string>
     <string name="barcode_content_description">barcode</string>
     <string name="new_value_textview_text">Новые показания</string>
+    <string name="open_banner_button_text">Открыть баннер</string>
+    <string name="close_banner_button_text">Свернуть баннер</string>
+    <string name="search_menu_item_toast_text">Поиск</string>
+    <string name="menu_item_one_toast">Айтем 1</string>
+    <string name="menu_item_two_toast">Айтем 2</string>
+    <string name="menu_item_three_toast">Айтем 3</string>
+    <string name="torch_menu_item_toast">Фонарик</string>
 </resources>

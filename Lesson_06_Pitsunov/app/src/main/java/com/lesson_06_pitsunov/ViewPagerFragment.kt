@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.lesson_06_pitsunov.com.lesson_06_pitsunov.ViewPagerAdapter
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
 

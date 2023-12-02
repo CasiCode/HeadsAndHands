@@ -2,7 +2,7 @@ package com.lesson_07_pitsunov.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class BridgeApi (
+class BridgeApi (
     @SerializedName("id") val id: Int?,
     @SerializedName("name") val name: String?,
     @SerializedName("name_eng") val nameEng: String?,

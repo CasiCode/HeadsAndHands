@@ -34,7 +34,8 @@ class BridgeDescriptionFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        navigationController = (parentFragment as? NavigationController) ?: (activity as? NavigationController)
+        navigationController =
+            (parentFragment as? NavigationController) ?: (activity as? NavigationController)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,7 +50,7 @@ class BridgeDescriptionFragment : Fragment() {
                 Bridge::class.java
             )
         }
-        val bridge: Bridge = _bridge?: Bridge(
+        val bridge: Bridge = _bridge ?: Bridge(
             name = NULL_STRING,
             nameEng = NULL_STRING,
             description = NULL_STRING,
@@ -65,25 +66,16 @@ class BridgeDescriptionFragment : Fragment() {
         )
 
         val statusImageView: ImageView = view.findViewById(R.id.statusImageView)
-        if (bridge.isClosed) {
-            statusImageView.setImageDrawable(
-                ContextCompat.getDrawable(
-                    view.context, R.drawable.ic_brige_late
-                )
-            )
-        } else if (bridge.isSoonClosed) {
-            statusImageView.setImageDrawable(
-                ContextCompat.getDrawable(
-                    view.context, R.drawable.ic_brige_soon
-                )
-            )
-        } else {
-            statusImageView.setImageDrawable(
-                ContextCompat.getDrawable(
-                    view.context, R.drawable.ic_brige_normal
-                )
-            )
+        val drawableRes = when {
+            bridge.isClosed -> R.drawable.ic_brige_late
+            bridge.isSoonClosed -> R.drawable.ic_brige_late
+            else -> R.drawable.ic_brige_normal
         }
+        statusImageView.setImageDrawable(
+            ContextCompat.getDrawable(
+                view.context, drawableRes
+            )
+        )
 
         val nameTextView: TextView = view.findViewById(R.id.nameTextView)
         val descriptionTextView: TextView = view.findViewById(R.id.descriptionTextView)
@@ -92,6 +84,7 @@ class BridgeDescriptionFragment : Fragment() {
                 nameTextView.text = bridge.name
                 descriptionTextView.text = bridge.description
             }
+
             else -> {
                 nameTextView.text = bridge.nameEng
                 descriptionTextView.text = bridge.descriptionEng
@@ -100,24 +93,16 @@ class BridgeDescriptionFragment : Fragment() {
 
         view.findViewById<TextView>(R.id.divorceTimeTextView).text = buildString {
             bridge.divorces.forEach {
-                this
-                    .append(it.start)
-                    .append("-")
-                    .append(it.end)
-                    .append(" ")
+                append(it.start)
+                append("-")
+                append(it.end)
+                append(" ")
             }
         }
 
         val toolbarImageView: ImageView = view.findViewById(R.id.toolbarImageView)
-        if (!bridge.isClosed) {
-            Glide.with(view.context)
-                .load(bridge.photoOpenURL)
-                .into(toolbarImageView)
-        } else {
-            Glide.with(view.context)
-                .load(bridge.photoCloseURL)
-                .into(toolbarImageView)
-        }
+        val image = if (bridge.isClosed) bridge.photoCloseURL else bridge.photoOpenURL
+        Glide.with(view.context).load(image).into(toolbarImageView)
 
         view.findViewById<MaterialToolbar>(R.id.bridgeDescriptionToolbar)
             .setNavigationOnClickListener {

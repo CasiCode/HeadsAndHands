@@ -15,7 +15,7 @@ class ItemOneFragment : Fragment(R.layout.fragment_item_one) {
                 R.id.searchMenuItem -> {
                     Toast.makeText(
                         this@ItemOneFragment.requireActivity(),
-                        "Поиск",
+                        getString(R.string.search_menu_item_toast_text),
                         Toast.LENGTH_SHORT
                     ).show()
                     true
@@ -24,7 +24,7 @@ class ItemOneFragment : Fragment(R.layout.fragment_item_one) {
                 R.id.dropdownMenuFirstItem -> {
                     Toast.makeText(
                         this@ItemOneFragment.requireActivity(),
-                        "Айтем 1",
+                        getString(R.string.menu_item_one_toast),
                         Toast.LENGTH_SHORT
                     ).show()
                     true
@@ -33,7 +33,7 @@ class ItemOneFragment : Fragment(R.layout.fragment_item_one) {
                 R.id.dropdownMenuSecondItem -> {
                     Toast.makeText(
                         this@ItemOneFragment.requireActivity(),
-                        "Айтем 2",
+                        getString(R.string.menu_item_two_toast),
                         Toast.LENGTH_SHORT
                     ).show()
                     true
@@ -42,7 +42,7 @@ class ItemOneFragment : Fragment(R.layout.fragment_item_one) {
                 R.id.dropdownMenuThirdItem -> {
                     Toast.makeText(
                         this@ItemOneFragment.requireActivity(),
-                        "Айтем 3",
+                        getString(R.string.menu_item_three_toast),
                         Toast.LENGTH_SHORT
                     ).show()
                     true

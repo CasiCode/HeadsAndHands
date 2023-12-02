@@ -66,10 +66,7 @@ class BridgeListFragment : Fragment() {
     private fun loadBridges() {
         lifecycleScope.launch {
             view?.findViewById<ProgressBar>(R.id.progressBar)?.isVisible = true
-            val bridges = mutableListOf<Bridge>()
-            ApiClient.apiService.getBridges().forEach {
-                bridges.add(Bridge(it))
-            }
+            val bridges = ApiClient.apiService.getBridges().map { Bridge(it) }
             adapter.submitList(bridges)
             view?.findViewById<ProgressBar>(R.id.progressBar)?.isVisible = false
         }

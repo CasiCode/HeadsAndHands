@@ -31,14 +31,14 @@ class ItemThreeFragment : Fragment() {
                         fragment?.let { remove(it) }
                     }
                     fragment = null
-                    button.text = "Открыть баннер"
+                    button.text = getString(R.string.open_banner_button_text)
                 }
                 false -> {
                     fragment = ViewPagerFragment.newInstance()
                     childFragmentManager.commit {
                         fragment?.let { add(R.id.fragmentFrameLayout, it) }
                     }
-                    button.text = "Свернуть баннер"
+                    button.text = getString(R.string.close_banner_button_text)
                 }
             }
             isButtonChecked = !isButtonChecked

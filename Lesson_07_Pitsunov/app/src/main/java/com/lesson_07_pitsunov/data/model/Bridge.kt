@@ -5,7 +5,7 @@ import com.lesson_07_pitsunov.values.StringConstants.NULL_STRING
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class Bridge (
+data class Bridge (
     val name: String,
     val nameEng: String,
     val description: String,
