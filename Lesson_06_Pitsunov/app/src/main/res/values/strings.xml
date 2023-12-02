@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Lesson_06_Pitsunov</string>
+    <string name="search_menu_item_title_text">Search</string>
+    <string name="dropdown_menu_first_item_title_text">Menu item one</string>
+    <string name="dropdown_menu_second_item_title_text">Menu item two</string>
+    <string name="dropdown_menu_third_item_title_text">Menu item three</string>
+    <string name="item_one_toolbar_title_text">Item one</string>
+    <string name="item_two_toolbar_title_text">Item two</string>
+    <string name="lamp_menu_item_title_text">Lamp</string>
+    <string name="item_three_toolbar_title_text">Item three</string>
+    <string name="peak_value_textview_text">Пик</string>
+    <string name="night_value_textview_text">Ночь</string>
+    <string name="day_value_textview_text">День</string>
+    <string name="info_button_content_description">info button</string>
+    <string name="more_button_content_description">more button</string>
+    <string name="send_button_content_description">send button</string>
+    <string name="barcode_content_description">barcode</string>
+    <string name="new_value_textview_text">Новые показания</string>
+    <string name="open_banner_button_text">Открыть баннер</string>
+    <string name="close_banner_button_text">Свернуть баннер</string>
+    <string name="search_menu_item_toast_text">Поиск</string>
+    <string name="menu_item_one_toast">Айтем 1</string>
+    <string name="menu_item_two_toast">Айтем 2</string>
+    <string name="menu_item_three_toast">Айтем 3</string>
+    <string name="torch_menu_item_toast">Фонарик</string>
+</resources>

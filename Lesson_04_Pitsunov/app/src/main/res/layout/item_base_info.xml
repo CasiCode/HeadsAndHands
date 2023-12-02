@@ -3,10 +3,16 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<<<<<<< HEAD
+    app:cardCornerRadius="2dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="?attr/customColorPrimary">
+=======
     android:orientation="vertical"
     app:cardCornerRadius="2dp"
     app:cardElevation="0dp"
     app:cardBackgroundColor="@color/white">
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +36,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+<<<<<<< HEAD
+                android:textColor="?attr/customTextColorPrimary"
+=======
                 android:textColor="@color/grey42"
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
                 android:textSize="16sp"/>
 
             <TextView
@@ -38,7 +48,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+<<<<<<< HEAD
+                android:textColor="?attr/customTextColorSecondary"
+=======
                 android:textColor="@color/grey88"
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
                 android:textSize="12sp"/>
         </LinearLayout>
     </LinearLayout>

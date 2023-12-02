@@ -3,7 +3,10 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<<<<<<< HEAD
+=======
     android:orientation="vertical"
+>>>>>>> 855f3571098986938cf7f2ea51174b925e10a1f3
     app:cardCornerRadius="2dp"
     app:cardElevation="0dp"
     app:cardBackgroundColor="?attr/customColorPrimary">
